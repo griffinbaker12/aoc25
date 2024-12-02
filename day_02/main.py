@@ -1,7 +1,4 @@
 def is_safe(nums):
-    if len(nums) <= 1:
-        return False
-
     inc = nums[1] - nums[0]
     for i in range(len(nums) - 1):
         diff = nums[i + 1] - nums[i]
@@ -14,15 +11,8 @@ with open("input.txt") as f:
     total = 0
     for line in f:
         nums = [int(x) for x in line.split()]
-
-        if is_safe(nums):
+        if is_safe(nums) or any(
+            is_safe(nums[:i] + nums[i + 1 :]) for i in range(len(nums))
+        ):
             total += 1
-            continue
-
-        for i in range(len(nums)):
-            test_nums = nums[:i] + nums[i + 1 :]
-            if is_safe(test_nums):
-                total += 1
-                break
-
-    print(total)
+    print(total)  # 318
