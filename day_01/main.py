@@ -7,7 +7,9 @@ col2_hash = defaultdict(int)
 
 with open("input.txt") as f:
     for line in f:
-        v1, v2 = [int(v.strip()) for v in line.split("   ")]
+        # NOTE: much more efficient
+        # v1, v2 = [int(v.strip()) for v in line.split("   ")]
+        v1, v2 = map(int, (v for v in line.split()))
         col1.append(v1)
         col2.append(v2)
     for v in col2:
