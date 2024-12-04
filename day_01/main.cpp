@@ -37,7 +37,6 @@ int main() {
   // c++ way of saying give me each element in the container
   for (int v : col2) {
     col2_hash[v]++;
-    cout << endl;
   }
 
   long long total = 0;

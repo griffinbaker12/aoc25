@@ -17,6 +17,7 @@ def solve_multiplications_with_state(text):
     do_pattern = r"do\(\)"
     dont_pattern = r"don\'t\(\)"
 
+    # TODO: under the hood this is creating a new object with internal storage right? that you can then iterate over...
     muls = [
         (m.start(), int(m.group(1)), int(m.group(2)))
         for m in re.finditer(mul_pattern, text)
