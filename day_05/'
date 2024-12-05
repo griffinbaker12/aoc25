@@ -1,0 +1,30 @@
+from collections import defaultdict
+
+with open("test.txt") as f:
+    rules, updates = f.read().split("\n\n")
+
+    rule_mp = defaultdict(set)
+    for rule in rules.splitlines():
+        k, v = list(map(int, rule.split("|")))
+        rule_mp[k].add(v)
+    print(rule_mp)
+
+    a = []
+    for update in updates.splitlines():
+        pages = [int(v) for v in update.split(",")]
+        for i, v in enumerate(pages):
+            if i == 0:
+                continue
+            prior, curr = pages[i - 1], pages[i]
+            print(prior, curr)
+            if curr not in rule_mp[prior]:
+                print(prior, curr)
+                break
+        else:
+            a.append(pages)
+
+    total = 0
+    for page in a:
+        m = len(page) // 2
+        total += page[m]
+    print(total)

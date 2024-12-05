@@ -19,4 +19,4 @@ l, r = list(
         *[list(map(int, line.split())) for line in open("test.txt").read().splitlines()]
     )
 )
-print(sum(v * r.count(v) for v in l))
+print(sum(v * [r].count(v) for v in l))
