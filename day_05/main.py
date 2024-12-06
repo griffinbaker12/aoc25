@@ -55,3 +55,5 @@ with open("input.txt") as f:
                 break
 
     print(total)
+
+hash(3)
