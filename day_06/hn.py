@@ -22,7 +22,7 @@ while True:
     # add current pos
     seen.add((r, c))  # type: ignore
     # check if next pos is outside the grid
-    if r + dr < 0 or r + dr >= len(grid) or r + dc < 0 or c + dc >= len(grid[0]):  # type: ignore
+    if r + dr < 0 or r + dr >= len(grid) or c + dc < 0 or c + dc >= len(grid[0]):  # type: ignore
         break
     # not outside grid, change dir or move to next pos
     if grid[r + dr][c + dc] == "#":  # type: ignore
