@@ -1,3 +1,6 @@
+# moves the complexity from (o(n*m)^2) to (o(n*m + p(n*m))), where p is the length of the path.
+# caching the path improves our solution as long as p < n*m
+
 grid = list(map(list, open("input.txt").read().splitlines()))
 # grid = [list(line) for line in open("test.txt").read().splitlines()]
 # print(grid)
