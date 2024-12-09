@@ -55,34 +55,6 @@ with open("input.txt") as f:
                 l = None
                 l_len = 0
 
-    # # Process files in decreasing ID order
-    # for curr_id in range(id - 1, -1, -1):
-    #     if curr_id not in files:
-    #         continue
-    #
-    #     # For each segment of this file
-    #     for start, length in files[curr_id]:
-    #         # Find leftmost valid free space
-    #         free_start = None
-    #         free_count = 0
-    #
-    #         for i in range(start):
-    #             if blocks[i] == ".":
-    #                 if free_start is None:
-    #                     free_start = i
-    #                 free_count += 1
-    #                 if free_count >= length:
-    #                     # Move the file
-    #                     for j in range(length):
-    #                         blocks[free_start + j] = curr_id
-    #                     for j in range(start, start + length):
-    #                         blocks[j] = "."
-    #                     break
-    #             else:
-    #                 free_start = None
-    #                 free_count = 0
-    #
-
     # Calculate checksum
     total = 0
     for i, v in enumerate(blocks):

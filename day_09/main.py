@@ -49,6 +49,7 @@ with open("test.txt") as f:
     #         l += 1
     #     blocks[l], blocks[r] = blocks[r], blocks[l]
     #     r -= 1
+    print(sum(i * v for i, v in enumerate(blocks) if v != "."))
     total = 0
     for i, v in enumerate(blocks):
         if v == ".":
