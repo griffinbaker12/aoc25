@@ -18,4 +18,7 @@ def count(stone, steps):
     return count(stone * 2024, steps - 1)
 
 
+# You don't need to keep track of the entire list
+# You just need to be able to know how many stones a given stone
+# will turn into
 print(sum(count(stone, 75) for stone in stones))
