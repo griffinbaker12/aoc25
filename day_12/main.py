@@ -33,10 +33,8 @@ def get_perim(pts):
     for r, c in pts:
         for dr, dc in dirs:
             new_r, new_c = r + dr, c + dc
-            # OOB counts
             if not (0 <= new_r < len(garden) and 0 <= new_c < len(garden[0])):
                 t += 1
-            # diff value counts
             elif garden[new_r][new_c] != garden[r][c]:
                 t += 1
     return t
@@ -76,10 +74,10 @@ for r in range(len(garden)):
             continue
 
         curr = garden[r][c]
-        area, c_seen = get_area(curr, r, c, set())
-        # perim = get_perim(c_seen)
-        sides = get_sides(c_seen)
-        p_seen.update(c_seen)
+        area, region = get_area(curr, r, c, set())
+        # perim = get_perim(region)
+        sides = get_sides(region)
+        p_seen.update(region)
 
         # Each region gets its own entry in the dictionary
         # mp[len(mp)] = {"type": curr, "area": area, "perim": perim}
