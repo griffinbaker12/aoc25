@@ -1,6 +1,6 @@
 from collections import deque
 
-with open("test.txt") as f:
+with open("input.txt") as f:
     grid = [line.strip() for line in f]
     rows = len(grid)
     cols = len(grid[0])
