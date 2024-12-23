@@ -11,8 +11,10 @@ def can_obtain(design):
     if design == "":
         return True
     for i in range(min(len(design), maxlen) + 1):
-        if design[:i] in patterns and can_obtain(design[i:]):
-            return True
+        # if design[:i] in patterns and can_obtain(design[i:]):
+        #     return True
+        if design[:i] in patterns:
+            return can_obtain(design[i:])
     return False
 
 
