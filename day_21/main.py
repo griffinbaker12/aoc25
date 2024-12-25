@@ -2,6 +2,7 @@ from collections import deque
 
 codes = [line.strip() for line in open(0)]
 
+
 num_keypad = [
     [7, 8, 9],
     [4, 5, 6],
@@ -13,7 +14,6 @@ dir_keypad = [
     [None, "^", "A"],
     ["<", "v", ">"],
 ]
-
 
 def solve_numkeypad(code):
     q = deque([(len(num_keypad) - 1, len(num_keypad[0]) - 1, "", "")])

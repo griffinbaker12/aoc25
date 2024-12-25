@@ -5,6 +5,7 @@
 #include <ranges>
 #include <sstream>
 #include <string>
+#include <unordered_map>
 #include <vector>
 
 int main() {
@@ -13,6 +14,7 @@ int main() {
     return 1;
   }
 
+  // nice that this parses according to the type of variable we declare
   std::vector<int> c1, c2;
   int n1, n2;
   while (in >> n1 >> n2) {
@@ -20,13 +22,12 @@ int main() {
     c2.push_back(n2);
   }
 
-  std::sort(c1.begin(), c1.end());
-  std::sort(c2.begin(), c2.end());
+  // nice that this inits to 0
+  std::unordered_map<int, int> counts;
+  for (int n2 : c2) counts[n2]++;
 
   int total{0};
-  for (auto [n1, n2] : std::views::zip(c1, c2)) {
-    total += abs(n2 - n1);
-  }
+  for (int n1 : c1) total += counts[n1] * n1;
 
   std::cout << total << std::endl;
 
