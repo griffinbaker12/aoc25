@@ -1,7 +1,6 @@
 CXX = g++             
 CXXFLAGS = -std=c++23 -Wall  
 
-
 %: %.cpp             
 	$(CXX) $(CXXFLAGS) $< -o $@
                               
